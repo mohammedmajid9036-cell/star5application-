@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Video History</title>
+    <link rel="stylesheet" href="main.css"> <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="script.js" defer></script> <!-- Link to external JavaScript file -->
+</head>
+<body>
+    <!-- Circular Arrow Button -->
+    <button class="back-button" onclick="goBack()" aria-label="Go Back">
+        <i class="fas fa-arrow-circle-left"></i> <!-- Font Awesome left circular arrow icon -->
+    </button>
+
+    <h1>Your Video History</h1>
+    
+    <!-- Delete Full History Button -->
+    <button id="deleteHistoryButton" class="delete-history-button">
+        Delete Full History
+    </button>
+
+    <div id="history-container" class="video-gallery">
+        <!-- History items will be dynamically inserted here -->
+    </div>
+
+    <script>
+        // Placeholder for JavaScript functionality (to be implemented later)
+        function goBack() {
+            window.history.back();
+        }
+        <button id="deleteHistoryButton" class="delete-history-button" onclick="deleteFullHistory()">
+    Delete Full History
+</button>
+    </script>
+    <button id="deleteHistoryButton" class="delete-history-button" onclick="deleteFullHistory()">
+        Delete Full History
+    </button>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const historyContainer = document.getElementById('history-container');
+            
+            // Retrieve watched videos from local storage
+            const watchedVideos = JSON.parse(localStorage.getItem('watchedVideos')) || [];
+        
+            if (watchedVideos.length === 0) {
+                historyContainer.innerHTML = '<p>.</p>';
+            } else {
+                watchedVideos.forEach(video => {
+                    const videoItem = document.createElement('div');
+                    videoItem.innerHTML = <p>${video}</p>;
+                    historyContainer.appendChild(videoItem);
+                });
+            }
+        });
+        </script>
+</body>
+</html>

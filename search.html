@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <link rel="stylesheet" href="main.css"> <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome -->
+    <script src="script.js" defer></script> <!-- Link to external JavaScript file -->
+</head>
+<body>
+<!-- Back Button -->
+<button class="back-button" onclick="goBack()">
+    <i class="fas fa-arrow-left"></i> <!-- Font Awesome left arrow icon -->
+</button>
+<div id="results"></div>
+<!-- search bar -->
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search..." aria-label="Search">
+</div>
+<!-- Result Container -->
+<div id="result-container">
+    <!-- Video results will be dynamically inserted here -->
+</div>
+<div class="video-gallery">
+    <div class="video-item">
+        <video controls>
+            <source src="path/to/sample-video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h5>Sample Video 1</h5>
+        <p>This is a description for Sample Video 1.</p>
+    </div>
+    <div class="video-item">
+        <video controls>
+            <source src="path/to/sample-video2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h5>Sample Video 2</h5>
+        <p>This is a description for Sample Video 2.</p>
+    </div>
+    <div class="video-item">
+        <video controls>
+            <source src="path/to/sample-video3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h5>Sample Video 3</h5>
+        <p>This is a description for Sample Video 3.</p>
+    </div>
+</div>
+ <!-- Microphone Button -->
+ <div class="microphone-container">
+    <button class="microphone-button" aria-label="Record" id="recordButton">
+        <img src="https://www.iconpacks.net/icons/1/free-microphone-icon-342-thumb.png" alt="Microphone Icon" class="microphone-icon">
+    </button>
+</button>
+</div>
+<!-- History Button -->
+<button class="history-button" onclick="goToHistory()" style="border: none; background: none; padding: 0;">
+</button>
+</button>
+</body>
+</html>

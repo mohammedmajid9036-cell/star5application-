@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        body {
+            background-color: grey; /* Set background color to grey */
+            color: white; /* Change text color for better contrast */
+            font-family: Arial, sans-serif; /* Set a default font */
+            text-align: center; /* Center align text */
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Remove default margin */
+        }
+
+        /* Modal styles */
+        .modal {
+            display: block; /* Show modal by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            background-color: whitesmoke;
+            color: black;
+            margin: auto; /* Center the modal horizontally */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 400px; /* Set width of the modal (increase as needed) */
+            height: auto; /* Set height to auto to accommodate content */
+            min-height: 300px; /* Minimum height of the modal */
+            position: absolute; /* Position relative to the viewport */
+            top: 50%; /* Position from the top */
+            left: 50%; /* Position from the left */
+            transform: translate(-50%, -50%); /* Translate to center it properly */
+        }
+
+        h2 {
+            margin-top: -14px; /* Remove top margin for heading inside modal */
+             font-size: 30px;
+        }
+
+        /* Input styles */
+        .input-box {
+            width: calc(100% - 20px); /* Full width minus padding for better fit */
+            padding: 15px; /* Increased padding for a larger input box */
+            margin-top: 1px; /* Space above the input box */
+            border-radius: 27px; /* Rounded corners for the input box */
+            border: 1px solid #ccc; /* Light border color for the input box */
+            font-size: 19px; /* Increased font size for better readability */
+            text-align: center;
+        }
+
+        .password-field {
+            margin-top: 10px; /* Space above the password input field */
+        }
+
+        .account-number-field {
+            margin-top: 10px; /* Space above the bank account number input field */
+        }
+
+        .submit-button {
+            margin-top: 20px; /* Space above the submit button */
+            padding: 10px 20px; /* Padding for the button */
+            border-radius: 27px; /* Rounded corners for the button */
+            border: none; /* Remove border for the button */
+            background-color: #4CAF50; /* Green background color for submit button */
+            color: white; /* White text color for button text */
+            font-size: 19px; /* Font size for button text */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+        
+        .submit-button:hover {
+            background-color: #45a049; /* Darker green on hover for effect */
+        }
+    </style>
+</head>
+<body>
+    <!-- The Modal -->
+    <div id="loginModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <h2>Create an Account</h2> <!-- Title for modal -->
+            
+             <!-- Input box for Account Name -->
+             <input type="text" class="input-box" placeholder="Account Name" required aria-label="Account Name"> 
+             
+             <!-- Password Field Added Below -->
+             <input type="password" class="input-box password-field" placeholder="Password" required aria-label="Password"> 
+             
+             <!-- Bank Account Number Field Added Below -->
+             <input type="text" class="input-box account-number-field" placeholder="Account Number For Monetary Transaction" required aria-label="Bank Account Number"> 
+             
+             <!-- Submit Button Added Below -->
+             <button type="submit" class="submit-button">Submit</button>
+         </div>
+     </div>
+
+     <script>
+         // Check if user is already registered
+         if (localStorage.getItem('isRegistered')) {
+             // Redirect to user dashboard if already registered
+             window.location.href = 'user-dashboard.html';
+         }
+
+         document.querySelector('.submit-button').addEventListener('click', function(event) {
+             event.preventDefault(); // Prevent default form submission
+
+             // Gather input values
+             const accountName = document.querySelector('input[placeholder="Account Name"]').value;
+             const password = document.querySelector('input[placeholder="Password"]').value;
+
+             // Basic validation
+             if (accountName && password) {
+                 console.log("Account Created:", { accountName, password });
+
+                 // Store registration status and account name in local storage
+                 localStorage.setItem('isRegistered', 'true');
+                 localStorage.setItem('accountName', accountName); // Store account name
+
+                 // Redirect to user dashboard
+                 window.location.href = 'user-dashboard.html'; // Redirect to user page
+             } else {
+                 alert("Please fill out all fields.");
+             }
+         });
+     </script>
+     <form id="signupForm">
+        <input type="text" placeholder="Account Name" required>
+        <input type="password" placeholder="Password" required>
+        <input type="text" placeholder="Account Number For Monetary Transaction" required>
+        <button type="button" class="register-button">Create Account</button>
+    </form>
+</body>
+</html>

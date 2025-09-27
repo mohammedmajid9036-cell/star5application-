@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        body {
+            background-color: #f0f0f0; /* Light background for the dashboard */
+            color: #333; /* Dark text color */
+            font-family: Arial, sans-serif; /* Set a default font */
+            margin: 0; /* Remove default margin */
+            padding: 20px; /* Add padding around the body */
+        }
+
+        h1 {
+            text-align: center; /* Center align the header */
+        }
+
+        .account-name {
+            font-size: 24px; /* Size for account name */
+            text-align: center; /* Center align account name */
+            margin-bottom: 20px; /* Space below account name */
+        }
+
+        .stats {
+            display: flex; /* Use flexbox for layout */
+            flex-wrap: wrap; /* Allow wrapping of items to the next line */
+            justify-content: space-around; /* Space out the statistics */
+            margin-top: 20px; /* Space above stats section */
+        }
+
+        .stat-item {
+            background-color: white; /* White background for stat items */
+            border-radius: 10px; /* Rounded corners for stat items */
+            padding: 20px; /* Padding inside stat items */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+            text-align: center; /* Center align text in stat items */
+            flex-basis: calc(25% - 20px); /* Basis width for each stat item (4 items per row) */
+            margin-bottom: 20px; /* Space below each stat item */
+        }
+
+        .stat-item h3 {
+            margin: 0; /* Remove default margin for heading */
+        }
+
+        .payment-status {
+            margin-top: 30px; /* Space above payment status section */
+            text-align: center; /* Center align payment status text */
+        }
+    </style>
+</head>
+<body>
+    <h1>User Dashboard</h1>
+    
+    <div class="account-name">
+        Welcome, <span id="userAccountName">User's Account Name</span>! <!-- Placeholder for account name -->
+    </div>
+
+    <div class="stats">
+        <div class="stat-item">
+            <h3>Total Followers</h3>
+            <p id="totalFollowers">0</p> <!-- Start from zero -->
+        </div>
+        <div class="stat-item">
+            <h3>Total Videos</h3>
+            <p id="totalVideos">0</p> <!-- Start from zero -->
+        </div>
+        <div class="stat-item">
+            <h3>Total Comments</h3>
+            <p id="totalComments">0</p> <!-- Start from zero -->
+        </div>
+        <div class="stat-item">
+           <h3>Total likes</h3>
+           <p id="totalDislikes">0</p> <!-- Start from zero -->
+       </div>
+       <div class="stat-item">
+           <h3>Total Ad Views</h3>
+           <p id="totalAdViews">0</p> <!-- Start from zero -->
+       </div>
+       <div class="stat-item">
+           <h3>Total Annual Views</h3>
+           <p id="totalAnnualViews">0</p> <!-- Start from zero -->
+       </div>
+       <div class="stat-item">
+           <h3>Total Monthly Views</h3>
+           <p id="totalMonthlyViews">0</p> <!-- Start from zero -->
+       </div>
+       <div class="stat-item">
+           <h3>Total Earnings ($)</h3>
+           <p id="totalEarnings">0.00</p> <!-- Start from zero -->
+       </div>
+   </div>
+   <script>
+       // Retrieve and set user account name from local storage
+       const userAccountName = localStorage.getItem('accountName');
+       document.getElementById('userAccountName').textContent = userAccountName || "User"; // Fallback to "User"
+
+       // Initialize statistics to zero
+       let totalFollowers = 0;
+       let totalVideos = 0;
+       let totalComments = 0;
+       let totalDislikes = 0;
+       let totalAdViews = 0;
+       let totalAnnualViews = 0;
+       let totalMonthlyViews = 0;
+       
+       const earningsPerAdView = 0.019; // Payment per ad view
+
+       // Update statistics on dashboard
+       document.getElementById('totalFollowers').textContent = totalFollowers;
+       document.getElementById('totalVideos').textContent = totalVideos;
+       document.getElementById('totalComments').textContent = totalComments;
+       document.getElementById('totalDislikes').textContent = totalDislikes;
+       document.getElementById('totalAdViews').textContent = totalAdViews;
+       document.getElementById('totalAnnualViews').textContent = totalAnnualViews;
+       document.getElementById('totalMonthlyViews').textContent = totalMonthlyViews;
+
+       // Function to update statistics based on user activities
+       function updateStatistics(followersIncrement, videosIncrement, commentsIncrement, dislikesIncrement, adViewsIncrement) {
+           totalFollowers += followersIncrement;
+           totalVideos += videosIncrement;
+           totalComments += commentsIncrement;
+           totalDislikes += dislikesIncrement;
+           totalAdViews += adViewsIncrement;
+
+           // Calculate earnings based on ad views
+           const totalEarnings = (totalAdViews * earningsPerAdView).toFixed(2);
+
+           // Update displayed values
+           document.getElementById('totalFollowers').textContent = totalFollowers;
+           document.getElementById('totalVideos').textContent = totalVideos;
+           document.getElementById('totalComments').textContent = totalComments;
+           document.getElementById('totalDislikes').textContent = totalDislikes;
+           document.getElementById('totalAdViews').textContent = totalAdViews;
+           document.getElementById('totalEarnings').textContent = totalEarnings;
+
+           // You can also update annual and monthly views here if needed
+           // Example:
+           // totalAnnualViews += someValueBasedOnActivity;
+           // document.getElementById('totalAnnualViews').textContent = totalAnnualViews;
+
+           // Similarly for monthly views
+           // totalMonthlyViews += someValueBasedOnActivity;
+           // document.getElementById('totalMonthlyViews').textContent = totalMonthlyViews;
+       }
+
+       // Example of updating statistics (replace with actual logic)
+       setTimeout(() => {
+           updateStatistics(0, 0, 0,0 ,0 ); // Simulate adding some stats after some activity
+       }, 2000); // Simulating activity after 2 seconds
+
+   </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="main.css"> <!-- Link to your CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome -->
+    <style>
+        body {
+            background-color: rgb(238, 178, 67);
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center; /* Center align text */
+        }
+        .login-icon {
+            position: relative; /* Position relative for child elements */
+            top: 90px;
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Adjust for centering */
+            width: 120px; /* Set width for the icon */
+            height: 120px; /* Set height for the icon */
+            border-radius: 50%; /* Make it circular */
+            overflow: hidden; /* Hide overflow for circular effect */
+            border: 0px solid black; /* Optional: border around the icon */
+        }
+        .login-icon i {
+            position: absolute; /* Position absolutely within the icon */
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Adjust to center */
+            font-size: 140px; /* Adjust font size as needed */
+            color: black; /* Default icon color */
+        }
+        .login-icon img {
+            width: 100%; /* Make image fill the icon */
+            height: 100%; /* Ensure image fills the height of the icon */
+            position: absolute; /* Position absolutely within the icon */
+            top: 0; /* Align to top */
+            left: 0; /* Align to left */
+            object-fit: cover; /* Ensure image covers the circle without distortion */
+        }
+       
+        #photoInput {
+            display: none; /* Hide the file input */
+        }
+
+        /* Specific styles for the LOGIN link */
+
+       #loginLink {
+       cursor: pointer; /* Change cursor to pointer on hover */
+       color: #333; /* Text color */
+       text-decoration: underline; /* Underline for links */
+       font-size: 18px; /* Font size (adjust as needed) */
+       font-weight: bold; /* Make it bold for emphasis */
+       margin-top: -5px; /* Add some space above */
+}
+
+       #loginLink:hover {
+       color: rgb(238, 178, 67); /* Change color on hover for better visibility */
+}
+h1 {
+    margin-top: 59px; /* Adjust the value as needed */
+    padding-right: 1000px;
+}
+#loginLink {
+    display: inline-block; /* Ensure it behaves like a block element */
+    transition: transform 0.2s ease; /* Smooth transition for transformation */
+    font-size: 24px; /* Set initial font size */
+}
+
+#loginLink.active {
+    transform: scaleY(-50%); /* Increase height on active state */
+}
+h4 {
+    margin-top: 40px; /* Space above, adjust as needed */
+    font-size: 20px; /* Set font size to 20 pixels */
+    color: #333; /* Text color */
+    text-align: center; /* Center align the text */
+    margin-right: 1000px;
+}
+
+h4 a {
+    text-decoration: underline; /* Underline for the link */
+    color: #333; /* Link color */
+}
+    </style>
+</head>
+<body>
+    <!-- Font Awesome User Icon -->
+    <div class="login-icon" id="loginIcon">
+        <i class="fas fa-user-circle"></i> <!-- Default icon -->
+        <img id="uploadedImage" src="" alt="Uploaded Photo" style="display:none;"> <!-- Initially hidden -->
+    </div>
+
+    <!-- Hidden file input for photo upload -->
+    <input type="file" id="photoInput" accept="image/*">
+
+    <h3>
+        <a id="signInLink" href="sign.html" style="cursor: pointer; color:#333; text-decoration: underline;margin-right: 995px;">
+        Sign In to New Account
+        </a>
+    </h3>
+    
+    <h1>
+        <a id="loginLink" href="log.html" style="cursor: pointer; color: #333; text-decoration: underline;">
+            LOGIN
+        </a>
+    </h1>
+
+    <!-- Terms and Conditions Section -->
+    <h4 style="margin-top: 50px; font-size: 25px; color: #333;">
+        <a href="terms.html" target="_blank" style="text-decoration: underline;">
+            Terms and Conditions</a>.
+    </h4>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginIcon = document.getElementById('loginIcon'); // User icon
+            const photoInput = document.getElementById('photoInput'); // Hidden file input for photo
+            const uploadedImage = document.getElementById('uploadedImage'); // Image element to show uploaded photo
+
+            // Trigger file input click when user clicks on the login icon
+            loginIcon.addEventListener('click', function() {
+                photoInput.click(); // Trigger hidden file input click
+            });
+
+            // Handle photo selection
+            photoInput.addEventListener('change', function(event) {
+                const file = event.target.files[0]; // Get the selected file
+                if (file) {
+                    const url = URL.createObjectURL(file); // Create a URL for the uploaded image
+                    uploadedImage.src = url; // Set src to show uploaded image
+                    uploadedImage.style.display = 'block'; // Make it visible
+                } else {
+                    alert("Please select an image file."); // Alert if no file is selected
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,558 @@
+body {
+  margin: 0; /* Remove default margin */
+  font-family: Arial, sans-serif; /* Set font for the page */
+  height: 100vh; /* Ensure body takes full viewport height */
+  overflow: hidden; /* Prevent scrolling */
+  background-color: rgb(238, 178, 67);
+}
+
+.logo1 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Align lines to the bottom */
+}
+
+.app-name {
+  font-size: 32px; /* Adjust font size as needed */
+  font-weight: bold; /* Make the name bold */
+  margin: 0; /* Remove margin */
+}
+
+.motto {
+  margin-bottom: 20px; /* Space between splash text and motto */
+  font-size: 24px; /* Font size for the motto */
+  color: #555; /* Color for the motto */
+  font-weight: bold; /* Make the motto bold */
+}
+
+.line {
+  width: 9px; /* Width of the lines */
+  background-color: black; /* Color of the lines */
+  margin: 0 2px; /* Space between lines */
+}
+
+.line11 {
+  height: 30px; /* Height of first line */
+}
+
+.line21 {
+  height: 70px; /* Height of second line */
+}
+
+.line31 {
+  height: 110px; /* Height of third line */
+}
+
+.line41 {
+  height: 171px; /* Default height */
+}
+
+.splash-screen {
+  position: fixed; /* Keep splash screen fixed */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  background-color: #fff; /* Background color for splash screen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure it covers everything */
+}
+.app-name {
+    display: flex; /* Use flexbox for header layout */
+    align-items: center; /* Center items vertically */
+    margin-bottom: -20px; /* Adjust as needed for spacing above app name */
+    font-size: 27px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin-left: 445px;
+}
+/* Search Container Styles */
+.search-container {
+    position:absolute; 
+    top:-10px;   /* Adjust as needed for vertical spacing from top edge (negative value can pull it upwards)*/
+    right:10px;
+}
+
+.search-button {
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:10px;
+}
+
+/* Magnifying Glass Icon Styles */
+
+.magnifying-glass-icon {
+    width:24px;
+    height:24px;
+    fill:currentColor;
+}
+
+/* Horizontal Line Styles */
+
+.horizontal-line {
+    border:none;
+    height:1.5px;
+    background-color:black;
+    margin-top:14px;   /* Negative value to reduce space above line (adjust if needed)*/
+    margin-top:14px;/* Space below the line (adjust as needed)*/
+    width:auto ;/* Full width minus padding if necessary*/
+}
+body {
+  margin: 0; /* Remove default margin */
+  font-family: Arial, sans-serif; /* Set font for the page */
+  background-color: rgb(238, 178, 67);
+}
+.back-button {
+  position: absolute; /* Position it absolutely */
+  top: 20px; /* Adjust as needed */
+  left: 20px; /* Adjust as needed */
+  background-color: black; /* Circle color */
+  border: none; /* Remove border */
+  border-radius: 50%; /* Make it circular */
+  width: 50px; /* Width of the circle */
+  height: 50px; /* Height of the circle */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center the icon horizontally */
+  align-items: center; /* Center the icon vertically */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.back-button i {
+  color: white; /* Arrow color */
+  font-size: 32px; /* Adjust size of the icon */
+}
+#searchInput {
+  width: 410px; /* Set width of the input */
+  border: 1px solid #ccc; /* Border styling */
+  border-radius: 30px; /* Rounded corners for the entire input */
+  outline: none; /* Remove outline */
+  color: white; /* Set text color */
+  height: 30px; /* Set height */
+  margin-top: 28px; /* Space above the input */
+  padding: 10px 360px; /* Add padding (top/bottom, left/right) */
+  background-color: black; /* Dark background color */
+  margin-right: 100px;
+  font-size: 20px;
+}
+#searchInput::placeholder {
+  color: rgb(245, 245, 245); /* Placeholder color */
+  padding-left: 160px;
+  font-size: 25px;
+}
+#searchInput:focus {
+  text-align: left; /* Align text to the left when focused */
+}
+#result-container {
+  margin-top: 90px; /* Space between search bar and results */
+  display: flex; /* Enable flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100px; /* Set a height for centering (adjust as needed) */
+  color: whitesmoke; /* Color for no results message */
+}
+.no-results {
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  color: rgb(200, 200, 200); 
+  margin-top: 20px; /* Space above the no results message */
+}
+/* after searching in the search box the following results */
+.video-gallery {
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow wrapping of items */
+  justify-content: space-between; /* Space items evenly */
+  margin-top: 20px; /* Add space above the gallery */
+}
+
+.video-item {
+  background-color: #222; /* Background color for each video item */
+  border-radius: 8px; /* Rounded corners */
+  margin: 10px; /* Space between video items */
+  padding: 10px; /* Padding inside each video item */
+  width: calc(30% - 20px); /* Adjust width as needed (30% width minus margins) */
+}
+
+.video-item video {
+  width: 100%; /* Make video fill the container */
+  border-radius: 4px; /* Rounded corners for the video */
+}
+
+.video-item h3, .video-item p {
+  color: white; /* Text color for titles and descriptions */
+}
+.microphone-container {
+  position: absolute; /* Use absolute positioning */
+  top: 18px; /* Distance from the top */
+  right: 10px; /* Distance from the right */
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+.microphone-button {
+  background: none; /* No background */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+.microphone-icon {
+  width: 70px; /* Set width */
+  height: 50px; /* Set height */
+}
+.history-button {
+  position: fixed; /* Fixed position to stay in view */
+  bottom: -9px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right */
+  background-color: rgb(238,178,67); /* Background color */
+  border: none; /* No border */
+  border-radius: 50%; /* Circular shape */
+  padding:10px; /* Padding for better click area */
+  cursor: pointer;
+}
+
+.responsive-icon {
+  width: 32px; /* Set desired width */
+  height: 32px; /* Maintain aspect ratio */
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width:600px) {
+ .history-button {
+     width:40px; /* Adjust size for mobile */
+     height:auto;
+ }
+
+ .responsive-icon {
+     width:30px; /* Smaller width for mobile devices */
+ }
+}
+.history-button {
+  background-color: rgb(238, 178, 67);
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px; /* Padding around text */
+  cursor: pointer; /* Pointer cursor on hover */
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  margin-top: 720px;
+  font-size: 14px;
+}
+.history-button img {
+  margin-right: 94px; /* Space between icon and text */
+  padding-left: 1202px;
+}
+.history-button:hover {
+  background-color: rgb(238, 178, 67);
+}
+.video-gallery {
+  display: flex; /* Use flexbox layout */
+  flex-wrap: wrap; /* Allow items to wrap onto the next line */
+  margin-top: 20px; /* Space above the gallery */
+}
+
+.video-item {
+  background-color: #222; /* Background color for each video item */
+  border-radius: 8px; /* Rounded corners */
+  margin-right: 10px; /* Space between video items */
+  margin-bottom: 10px; /* Space below video items */
+  padding: 10px; /* Padding inside each video item */
+}
+
+.video-item video {
+  width: 100%; /* Make video fill the container */
+  height: auto; /* Maintain aspect ratio */
+}
+h1 {
+  text-align: center; /* Center the text horizontally */
+  margin-top: 20px; /* Adjust top margin as needed */
+  margin-bottom: 20px; /* Adjust bottom margin as needed */
+}
+body {
+  margin: 0; /* Remove default margin */
+  font-family: Arial, sans-serif; /* Set font for the page */
+  background-color: rgb(238, 178, 67); /* Background color */
+}
+.back-button {
+  position: absolute; /* Position it absolutely */
+  top: 20px; /* Adjust as needed */
+  left: 20px; /* Adjust as needed */
+  width: 50px; /* Width of the button */
+  height: 50px; /* Height of the button */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center icon horizontally */
+  align-items: center; /* Center icon vertically */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.back-button i {
+  color: white; /* White color for the arrow icon */
+  font-size: 24px; /* Adjust size of the icon as needed */
+}
+
+.back-button:hover {
+  opacity: 0.8; /* Slightly fade on hover for effect */
+}
+
+.video-gallery {
+  display: flex; /* Use flexbox layout */
+  flex-wrap: wrap; /* Allow items to wrap onto the next line */
+}
+
+.video-item {
+  border-radius: 8px; /* Rounded corners */
+  margin-right: 10px; /* Space between video items */
+  margin-bottom: 10px; /* Space below video items */
+  padding: 10px; /* Padding inside each video item */
+  
+}
+body {
+  margin: 0; /* Remove default margin */
+  font-family: Arial, sans-serif; /* Set font for the page */
+  background-color: rgb(238, 178, 67); /* Background color */
+}
+
+.back-button {
+  position: absolute; /* Position it absolutely */
+  top: 20px; /* Adjust as needed */
+  left: 20px; /* Adjust as needed */
+  width: 50px; /* Width of the button */
+  height: 50px; /* Height of the button */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center icon horizontally */
+  align-items: center; /* Center icon vertically */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.back-button i {
+  color: white; /* White color for the arrow icon */
+  font-size: 24px; /* Adjust size of the icon as needed */
+}
+
+.delete-history-button {
+  position: absolute; /* Position it absolutely */
+  top: 20px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
+  background-color:black; /* Background color */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 15px; /* Padding around text */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.delete-history-button:hover {
+  background-color: black; /* Darker shade on hover */
+}
+
+h1 {
+  text-align: center; /* Center the text horizontally */
+  margin-top: 20px; /* Adjust top margin as needed */
+}
+
+.video-gallery {
+  display: flex; /* Use flexbox layout */
+  flex-wrap: wrap; /* Allow items to wrap onto the next line */
+  margin-top: 20px; /* Space above the gallery */
+  height: 10px;
+  width: 1367px;
+}
+
+.video-item {
+  background: rgb(46, 44, 44); /* Background color for each video item */
+  border-radius: 0px; /* Rounded corners */
+  margin-right: 10px; /* Space between video items */
+  margin-bottom: 0px; /* Space below video items */
+  padding: 18px; /* Padding inside each video item */
+  height: 278px;
+}
+
+.video-item video {
+  width: 100%; /* Make video fill the container */
+  height: auto; /* Maintain aspect ratio */
+
+}.add-button {
+  position: fixed; /* Fixed position */
+  bottom: 1px; /* Distance from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  background-color: whitesmoke; /* Red background color */
+  color: black; /* White text color */
+  border: none; /* No border */
+  border-radius: 50%; /* Circular shape */
+  width: 45px; /* Width of the button */
+  height: 45px; /* Height of the button */
+  display: flex; /* Use flexbox for centering icon */
+  justify-content: center; /* Center icon horizontally */
+  align-items: center; /* Center icon vertically */
+  font-size: 24px; /* Font size for icon */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.add-button:hover {
+  opacity: 0.8; /* Slightly fade on hover for effect */
+}
+.popup-box {
+  position: fixed; /* Fixed position to stay in place */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for centering */
+  width: 300px; /* Width of the popup */
+  height: 300px; /* Height of the popup */
+  background-color: white; /* Background color */
+  border: 2px solid #ccc; /* Border styling */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+.popup-content {
+  padding: 20px; /* Padding inside the popup */
+  text-align: center; /* Center text inside */
+}
+
+.popup-content h2 {
+  margin-bottom: 20px; /* Space below title */
+}
+
+.popup-content button {
+  margin-top: 10px; /* Space above buttons */
+}
+.cancel-button {
+  position: absolute; /* Position it absolutely */
+  top: 10px; /* Distance from the top */
+  left: 10px; /* Distance from the left */
+  background: none; /* No background */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 24px; /* Adjust size as needed */
+}
+
+.cancel-button i {
+  color: black; /* Change color as needed */
+}
+.live-text {
+  font-size: 30px; /* Font size */
+  font-weight: bold; /* Make it bold */
+  color: red; /* Text color */
+  margin-top: 20px; /* Space above the text */
+  margin-left: 63px;
+}
+.extension-icon {
+  width: 46px; /* Set desired width */
+  height: 46px; /* Set desired height */
+  margin-left: 9px; /* Space between text and icon */
+  font-size: 30px;
+  margin-bottom: 13px;
+}
+.login-icon-container {
+  position: fixed; /* Fixed position */
+  bottom: 1px; /* Distance from the bottom */
+  left: 130px; /* Distance from the left */
+}
+
+.login-icon {
+  font-size: 30px; /* Adjust size as needed */
+  color: black; /* Change color if needed */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.login-icon:hover {
+  color: rgb(39, 29, 29); /* Change color on hover for effect */
+}
+body {
+  background-color: rgb(238, 178, 67); /* Background color */
+  margin: 0; /* Remove default margin */
+  font-family: Arial, sans-serif; /* Set font for the page */
+}
+
+.login-icon L{
+  position: absolute; /* Position it absolutely */
+  top: 40px; /* Adjust as needed */
+  left: 30px; /* Adjust as needed */
+  font-size: 90px; /* Adjust size of the icon */
+  color: black; /* Change color as needed */
+}
+
+h1 {
+  margin-top: 0px; /* Space from the top for the heading */
+  color: black; /* Change heading color */
+  text-align: center; /* Center align heading */
+}
+
+h3 {
+  font-size: 16px; /* Font size for the heading */
+  align-self: flex-start; /* Align heading to the start (left) */
+  margin-top: 5px;
+  margin-right: 20px;
+}
+h3:hover {
+  color: rgb(5, 3, 3); /* Change color on hover */
+}
+.custom-horizontal-line {
+  width: 100%; /* Adjust width as needed */
+  height: 2px; /* Height of the line */
+  background-color: black; /* Change color */
+  border: none; /* Remove default border */
+  margin: 20px auto; /* Center it with auto margins */
+  border-radius: 5px; /* Rounded edges */
+  margin-top: 667px;
+  display: flex;
+  cursor: pointer; /* Pointer cursor on hover */
+}
+/* Styles for fullscreen mode */
+:fullscreen .horizontal-line,
+:fullscreen .custom-horizontal-line {
+    width: 100%; /* Ensure full width in fullscreen */
+    height: 4px; /* Adjust height if needed */
+    position: absolute; /* Maintain relative positioning */
+    top: 0; /* Adjust top position if necessary */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color:rgb(238, 178, 67) ; /* Light background color */
+  overflow-y: auto; /* Allow vertical scrolling */
+}
+.video-item button {
+  margin: 0px; /* Add some space between buttons */
+  padding: 5px 10px; /* Add padding for better clickability */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+.video-item {
+  position: relative;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 14px;
+}
+
+.view-counter {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  
+}
+
+.eye-container {
+  display: inline-block; /* Allows adjusting width and height */
+}
+
+.eye-icon {
+  width: 23px;
+  height: 23px;
+  filter: invert(100%); /* Invert the colors to make it white */
+  vertical-align: middle; /* Align icon vertically with text */
+  margin-left: 320px;
+  margin-top: 5px;
+}
+
+.view-count {
+  font-size: 14px;
+  color: whitesmoke;
+  margin-left: 9px; /* Add some space between the icon and text */
+}

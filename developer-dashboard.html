@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Dashboard</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Light background for the dashboard */
+            color: #333; /* Dark text color */
+            font-family: Arial, sans-serif; /* Set a default font */
+            margin: 0; /* Remove default margin */
+            padding: 20px; /* Add padding around the body */
+        }
+
+        h1 {
+            text-align: center; /* Center align the header */
+        }
+
+        .account-info {
+            display: flex; /* Use flexbox for horizontal alignment */
+            justify-content: flex-start; /* Align items to the left */
+            align-items: center; /* Center items vertically */
+            margin-bottom: 20px;
+        }
+
+        .account-details {
+            text-align: left; /* Align text to the left */
+            margin-right: auto; /* Push to the left side */
+        }
+    </style>
+</head>
+<body>
+    <h1>Developer Dashboard</h1>
+    <div id="account-info">
+        <h2>Account Information</h2>
+        <p><strong>Account Name:</strong> <span id="displayAccountName"></span></p>
+        <p><strong>Password:</strong> <span id="displayPassword"></span></p>
+        <p><strong>Account Number:</strong> <span id="displayAccountNumber"></span></p>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Retrieve stored account information from local storage
+            const accountName = localStorage.getItem('accountName');
+            const password = localStorage.getItem('password');
+            const accountNumber = localStorage.getItem('accountNumber');
+    
+            // Display the retrieved information
+            document.getElementById('displayAccountName').textContent = accountName || "Not available";
+            document.getElementById('displayPassword').textContent = password || "Not available"; // Consider not displaying passwords
+            document.getElementById('displayAccountNumber').textContent = accountNumber || "Not available";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Set your desired background color */
+            color: #333; /* Text color */
+            font-family: Arial, sans-serif;
+            text-align: center; /* Center align text */
+        }
+        h1 {
+            margin-top: 50px; /* Space from the top */
+        }
+        .box {
+            background-color: white; /* Background color of the box */
+            border: 1px solid #ccc; /* Light gray border */
+            border-radius: 8px; /* Rounded corners */
+            padding: 20px; /* Padding inside the box */
+            width: 300px; /* Width of the box */
+            margin: 20px auto; /* Center the box horizontally with some margin */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+        .box{
+            height: 300px;
+            width: 300px;
+            margin-top:140px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Small Box -->
+    <div class="box">
+        <h2>Login</h2>
+        <form>
+            <input type="text" placeholder="Username" required style="width: 90%;
+            padding: 14px; margin-bottom: 23px; border-radius: 4px; border: 1px solid #ccc;">
+            <input type="password" placeholder="Password" required style="width: 90%; 
+            padding: 14px; margin-bottom: 10px; border-radius: 4px; border: 1px solid #ccc;">
+            <button type="submit" style="width: 90%; padding: 14px; background-color: #4CAF50; color: whitesmoke;
+            border: none; border-radius: 7px;">Login</button>
+        </form>
+    </div>
+    <script>
+        let failedAttempts = 0;
+        const maxAttempts = 3;
+        const lockoutDuration = 3 * 60 * 60 * 1000; // Lockout duration in milliseconds (3 hours)
+        let lockoutTime = null;
+
+            // Get input values
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Retrieve stored credentials
+            const storedUsername = localStorage.getItem('username');
+            const storedPassword = localStorage.getItem('password');
+
+            // Check if entered credentials match stored ones
+            if (username === storedUsername && password === storedPassword) {
+                // Reset failed attempts on successful login
+                failedAttempts = 0;
+                window.location.href = 'account.html'; // Redirect to user's account page
+            } else {
+                failedAttempts++;
+                alert('Invalid username or password. Please try again.');
+
+                // Check if max attempts reached
+                if (failedAttempts >= maxAttempts) {
+                    lockoutTime = Date.now() + lockoutDuration; // Set lockout time
+                    alert('Too many failed attempts. Your account is locked for 3 hours.');
+                }
+            }
+        ;
+    </script>
+</body>
+</html>

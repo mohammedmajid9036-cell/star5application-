@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application</title>
+    <link rel="stylesheet" href="main.css"> <!-- Link to external CSS file -->
+    <script src="script.js" defer></script> <!-- Link to external JavaScript file -->
+    <script src="views-counting.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div class="splash-screen">
+        <div class="motto">HARDWORK + SMARTWORK = SUCCESS</div>
+        <div class="logo1">
+            <div class="line line11"></div>
+            <div class="line line21"></div>
+            <div class="line line31"></div>
+            <div class="line line41"></div>
+        </div>
+    </div>
+
+    <h1 class="app-name">Hardwork + Smartwork = Success</h1>
+
+    <!-- Main Content Wrapper -->
+    <main>
+        <!-- Search Container -->
+        <div class="search-container">
+            <button class="search-button" aria-label="Search" onclick="window.location.href='search.html'">
+                <svg class="magnifying-glass-icon" viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 
+                    C16 5.91 13.09 3 9.5 3S3 
+                    5.91 3 9.5 5.91 16 9.5 16c1.61 0 
+                    3.09-.59 4.23-1.57l.27.28v.79l5 
+                    4.99L20.49 19l-4.99-5zm-6 
+                    0C7.01 14 5 11.99 5 
+                    9.5S7.01 5 9.5 5 
+                    14 7.01 14 
+                    9.5 
+                    11.99 
+                    14 
+                    9.5 
+                    14z"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Horizontal Line -->
+        <hr class="horizontal-line">
+
+        <!-- History Button -->
+        <button class="history-button" onclick="goToHistory()">
+            <img src="https://img.freepik.com/premium-vector/open-book-icon-silhouette-vector_579909-8144.jpg" alt="Open Book Icon" 
+            class="responsive-icon">
+        </button>
+
+        <!-- Add Button -->
+        <button class="add-button">
+            <i class="fas fa-plus"></i> <!-- Font Awesome icon for the plus sign -->
+        </button>
+
+        <!-- Popup Box -->
+        <div id="popupBox" class="popup-box" style="display: none;">
+            <div class="popup-content">
+                <button id="cancelButton" class="cancel-button" aria-label="Cancel">
+                    <i class="fas fa-arrow-circle-left"></i> <!-- Circular arrow icon -->
+                </button>
+                <h2 style="font-size: 18px;">ADD CONTENT</h2>
+                <h4 style="color: black; font-size: 30px;" id="implementVideo">Implement Video</h4>
+                <p style="font-size: 18px; color: #333; margin-bottom: 20px;"></p> <!-- Existing sentence -->
+                <div style="display: flex; align-items: center;"> <!-- Flex container for alignment -->
+                    <p id="liveText" class="live-text" style="margin-right: 8px; cursor: pointer; color: red; text-decoration: underline;">LIVE</p> <!-- Clickable LIVE text -->
+                    <!-- Extension icon -->
+                    <img src="https://static.thenounproject.com/png/21625-200.png" alt="Extension Icon" style="width: 46px; height: 46px; margin-left: 9px; margin-bottom: 13px;"> 
+                </div>
+                <input type="file" id="videoInput" accept="video/*" style="display: none;"> <!-- Hidden file input -->
+            </div>
+        </div>
+
+        <!-- Video Gallery Container -->
+        <div id="videoContainer"></div> <!-- Container for live video -->
+
+        <div class="video-gallery">
+            <!-- Video items will be dynamically inserted here -->
+        </div>
+
+        
+        <!-- Login Icon -->
+        <div class="login-icon-container">
+            <a href="login.html" aria-label="Login">
+                <i class="fas fa-user-circle login-icon"></i>
+            </a>
+        </div>
+    </main>
+    </div>
+    
+</body>
+</html>
