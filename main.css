@@ -450,7 +450,7 @@ h1 {
 .login-icon-container {
   position: fixed; /* Fixed position */
   bottom: 1px; /* Distance from the bottom */
-  left: 130px; /* Distance from the left */
+  margin-left: 700px; /* Distance from the left */
 }
 
 .login-icon {
