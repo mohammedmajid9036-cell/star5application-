@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif; /* Set font for the page */
   height: 100vh; /* Ensure body takes full viewport height */
   overflow: hidden; /* Prevent scrolling */
-  background-color: rgb(238, 178, 67);
+  background-color: rgb(2,0,120);
 }
 
 .logo1 {
@@ -16,6 +16,7 @@ body {
   font-size: 32px; /* Adjust font size as needed */
   font-weight: bold; /* Make the name bold */
   margin: 0; /* Remove margin */
+  color: whitesmoke;
 }
 
 .motto {
@@ -89,6 +90,7 @@ body {
     width:24px;
     height:24px;
     fill:currentColor;
+    color: whitesmoke;
 }
 
 /* Horizontal Line Styles */
@@ -104,7 +106,7 @@ body {
 body {
   margin: 0; /* Remove default margin */
   font-family: Arial, sans-serif; /* Set font for the page */
-  background-color: rgb(238, 178, 67);
+  background-color: rgb(2,0,120);
 }
 .back-button {
   position: absolute; /* Position it absolutely */
@@ -206,7 +208,7 @@ body {
   position: fixed; /* Fixed position to stay in view */
   bottom: -9px; /* Distance from the bottom */
   right: 20px; /* Distance from the right */
-  background-color: rgb(238,178,67); /* Background color */
+  background-color: rgb(2,0,120); /* Background color */
   border: none; /* No border */
   border-radius: 50%; /* Circular shape */
   padding:10px; /* Padding for better click area */
@@ -230,7 +232,7 @@ body {
  }
 }
 .history-button {
-  background-color: rgb(238, 178, 67);
+  background-color: rgb(2,0,120);
   border: none; /* No border */
   border-radius: 5px; /* Rounded corners */
   padding: 10px; /* Padding around text */
@@ -245,7 +247,7 @@ body {
   padding-left: 1202px;
 }
 .history-button:hover {
-  background-color: rgb(238, 178, 67);
+  background-color: rgb(2,0,120);
 }
 .video-gallery {
   display: flex; /* Use flexbox layout */
@@ -273,7 +275,7 @@ h1 {
 body {
   margin: 0; /* Remove default margin */
   font-family: Arial, sans-serif; /* Set font for the page */
-  background-color: rgb(238, 178, 67); /* Background color */
+  background-color: rgb(2,0,120); /* Background color */
 }
 .back-button {
   position: absolute; /* Position it absolutely */
@@ -311,7 +313,7 @@ body {
 body {
   margin: 0; /* Remove default margin */
   font-family: Arial, sans-serif; /* Set font for the page */
-  background-color: rgb(238, 178, 67); /* Background color */
+  background-color: rgb(2,0,120); /* Background color */
 }
 
 .back-button {
@@ -455,7 +457,7 @@ h1 {
 
 .login-icon {
   font-size: 30px; /* Adjust size as needed */
-  color: black; /* Change color if needed */
+  color: whitesmoke; /* Change color if needed */
   cursor: pointer; /* Change cursor on hover */
 }
 
@@ -463,7 +465,7 @@ h1 {
   color: rgb(39, 29, 29); /* Change color on hover for effect */
 }
 body {
-  background-color: rgb(238, 178, 67); /* Background color */
+  background-color: rgb(2,0,120); /* Background color */
   margin: 0; /* Remove default margin */
   font-family: Arial, sans-serif; /* Set font for the page */
 }
@@ -513,7 +515,7 @@ h3:hover {
 
 body {
   font-family: Arial, sans-serif;
-  background-color:rgb(238, 178, 67) ; /* Light background color */
+  background-color:rgb(2,0,120) ; /* Light background color */
   overflow-y: auto; /* Allow vertical scrolling */
 }
 .video-item button {
@@ -579,7 +581,7 @@ body {
 }
 
 /* Media query for mobile phones */
-@media (max-width: 300px) {
+@media (max-width: 400px) {
   .video-item {
     width: 100%; /* full width */
     margin-right: 0;
@@ -608,8 +610,8 @@ body {
     text-align: center;
   }
   /* Adjust splash screen logo line heights for mobile */
-  .line11 { height: 25px; }
-  .line21 { height: 45px; }
-  .line31 { height: 65px; }
-  .line41 { height: 85px; }
+  .line11 { height: 20px; }
+  .line21 { height: 40px; }
+  .line31 { height: 60px; }
+  .line41 { height: 80px; }
 }
