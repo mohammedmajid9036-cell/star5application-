@@ -609,7 +609,7 @@ body {
   }
   /* Adjust splash screen logo line heights for mobile */
   .line11 { height: 20px; }
-  .line21 { height: 50px; }
-  .line31 { height: 80px; }
-  .line41 { height: 100px; }
+  .line21 { height: 40px; }
+  .line31 { height: 60px; }
+  .line41 { height: 80px; }
 }
