@@ -556,3 +556,60 @@ body {
   color: whitesmoke;
   margin-left: 9px; /* Add some space between the icon and text */
 }
+/* Media query for tablets and smaller screens */
+@media (max-width: 992px) {
+  .video-item {
+    width: 48%; /* two per row */
+    padding: 10px;
+  }
+  #searchInput {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 18px;
+  }
+  .history-button {
+    width: 40px;
+    padding: 8px;
+  }
+  .app-name {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 22px;
+  }
+}
+
+/* Media query for mobile phones */
+@media (max-width: 600px) {
+  .video-item {
+    width: 100%; /* full width */
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  #searchInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .add-button {
+    bottom: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  .history-button {
+    width: 35px;
+    padding: 6px;
+    margin-top: 0;
+  }
+  .app-name {
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  /* Adjust splash screen logo line heights for mobile */
+  .line11 { height: 20px; }
+  .line21 { height: 50px; }
+  .line31 { height: 80px; }
+  .line41 { height: 100px; }
+}
